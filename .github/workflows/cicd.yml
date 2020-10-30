@@ -1,0 +1,32 @@
+name: ddb-importer-chrome CI
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - '**.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get Version              # Run the script that returns the version from `module.json`
+      shell: bash
+      id: get-version
+      run: echo "::set-output name=version::$(node ./.github/workflows/get-version.js)"
+    - run: zip -r ./ddb-importer-chrome.zip manifest.json cobalt.js LICENSE icons popup.html README.md     # Add folders/files here
+    - name: Create Release                                # Create an additional release for this version
+      id: create_versioned_release
+      uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: false # set to false if you do not want to allow updates on existing releases
+        name: Release ${{ steps.get-version.outputs.version }} # Use the version in the name
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: './ddb-importer-chrome.zip'    # don't forget to rename module zip thing
+        tag: ${{ steps.get-version.outputs.version }} # Use the version as the tag
+
