@@ -1,0 +1,30 @@
+{
+  "name": "MrPrimate's DDB Importer!",
+  "version": "0.0.1",
+  "description": "Transports your dndbeyond.com characters to Foundry Table Top. For more details see https://github.com/mrprimate/ddb-importer",
+  "manifest_version": 2,
+  "icons": {
+    "32": "icons/icon-32x32.png",
+    "38": "icons/icon-38x38.png",
+    "64": "icons/icon-64x64.png",
+    "128": "icons/icon-128x128.png"
+  },
+  "permissions": [
+    "storage",
+    "cookies",
+    "activeTab",
+    "declarativeContent",
+    "https://*.dndbeyond.com/*",
+    "https://dndbeyond.com/*",
+    "clipboardWrite"
+  ],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icons/icon-32x32.png",
+      "38": "icons/icon-38x38.png",
+      "64": "icons/icon-64x64.png",
+      "128": "icons/icon-128x128.png"
+    }
+  }
+}
