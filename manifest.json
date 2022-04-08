@@ -14,9 +14,11 @@
     "cookies",
     "activeTab",
     "declarativeContent",
-    "https://dndbeyond.com/*",
-    "https://*.dndbeyond.com/*",
     "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://dndbeyond.com/*",
+    "https://*.dndbeyond.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
