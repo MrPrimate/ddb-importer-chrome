@@ -1,6 +1,6 @@
 {
   "name": "MrPrimate's DDB Importer!",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Transports your dndbeyond.com characters to Foundry Table Top. For more details see https://github.com/mrprimate/ddb-importer",
   "manifest_version": 3,
   "icons": {
